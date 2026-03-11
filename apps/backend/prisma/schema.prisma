@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+}
+
+model AdminUser {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  passwordHash  String
+  role          String         @default("admin")
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  refreshTokens RefreshToken[]
+}
+
+model RefreshToken {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String
+  expiresAt DateTime
+  revokedAt DateTime?
+  createdAt DateTime  @default(now())
+  user      AdminUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Group {
+  id        String         @id @default(cuid())
+  slug      String         @unique
+  nameRu    String
+  nameEn    String?
+  isActive  Boolean        @default(true)
+  sortOrder Int            @default(0)
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  products  ProductGroup[]
+
+  @@index([isActive, sortOrder])
+}
+
+model Product {
+  id            String         @id @default(cuid())
+  slug          String         @unique
+  titleRu       String
+  titleEn       String?
+  descriptionRu String?
+  descriptionEn String?
+  isInStock     Boolean        @default(true)
+  isPublished   Boolean        @default(false)
+  sortOrder     Int            @default(0)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  groups        ProductGroup[]
+  media         Media[]
+
+  @@index([isPublished, isInStock, sortOrder])
+}
+
+model ProductGroup {
+  productId String
+  groupId   String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  group     Group   @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@id([productId, groupId])
+  @@index([groupId, productId])
+}
+
+model Media {
+  id          String    @id @default(cuid())
+  productId   String
+  type        MediaType
+  objectKey   String
+  mimeType    String
+  sizeBytes   BigInt
+  width       Int?
+  height      Int?
+  durationSec Int?
+  sortOrder   Int       @default(0)
+  createdAt   DateTime  @default(now())
+  product     Product   @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, objectKey])
+  @@index([productId, sortOrder])
+}

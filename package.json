@@ -1,0 +1,19 @@
+{
+  "name": "boho-jewelry-store",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "logs:infra": "docker compose logs -f --tail=100 --timestamps db minio",
+    "dev:up": "docker compose up -d db minio minio-init && pnpm dev:all",
+    "dev:all": "concurrently -n BACKEND,FRONTEND -c green.bold,cyan.bold \"pnpm --filter backend start:dev\" \"pnpm --filter frontend dev\"",
+    "dev:stop": "docker compose down",
+    "build": "pnpm -r build",
+    "prisma:generate": "pnpm --filter backend prisma:generate",
+    "prisma:migrate": "pnpm --filter backend prisma:migrate",
+    "prisma:studio": "pnpm --filter backend prisma:studio"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
