@@ -7,6 +7,8 @@
     "logs:infra": "docker compose logs -f --tail=100 --timestamps db minio",
     "dev:up": "docker compose up -d db minio minio-init && pnpm dev:all",
     "dev:all": "concurrently -n BACKEND,FRONTEND -c green.bold,cyan.bold \"pnpm --filter backend start:dev\" \"pnpm --filter frontend dev\"",
+    "dev:all:with-infra-logs": "concurrently -n INFRA,BACKEND,FRONTEND -c yellow.bold,green.bold,cyan.bold \"pnpm logs:infra\" \"pnpm --filter backend start:dev\" \"pnpm --filter frontend dev\"",
+    "dev:up:with-infra-logs": "docker compose up -d db minio minio-init && pnpm dev:all:with-infra-logs",
     "dev:stop": "docker compose down",
     "build": "pnpm -r build",
     "prisma:generate": "pnpm --filter backend prisma:generate",
