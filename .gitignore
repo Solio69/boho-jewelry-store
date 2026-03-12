@@ -17,3 +17,5 @@ apps/backend/prisma/migrations
 
 .DS_Store
 Thumbs.db
+AGENTS.md
+API.md

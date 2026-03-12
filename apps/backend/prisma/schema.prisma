@@ -55,6 +55,8 @@ model Product {
   titleEn       String?
   descriptionRu String?
   descriptionEn String?
+  materials     String[]       @default([])
+  price         Decimal        @db.Decimal(10, 2)
   isInStock     Boolean        @default(true)
   isPublished   Boolean        @default(false)
   sortOrder     Int            @default(0)
