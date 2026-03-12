@@ -1,3 +1,9 @@
+import Catalog from '../../components/catalog/Catalog'
+
 export default function HomePage() {
-  return <main>HomePage</main>;
+  return (
+    <main>
+      <Catalog />
+    </main>
+  )
 }
