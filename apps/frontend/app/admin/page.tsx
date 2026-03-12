@@ -4,11 +4,9 @@ export default function AdminPage() {
       <section className="hero">
         <h1>Admin UI Placeholder</h1>
         <p className="muted">
-          This route is reserved for admin panel pages. Access control will be
-          connected to NestJS JWT auth.
+          This route is reserved for admin panel pages. Access control will be connected to NestJS JWT auth.
         </p>
       </section>
     </main>
   );
 }
-

@@ -4,8 +4,7 @@ export default function HomePage() {
       <section className="hero">
         <h1>Jewelry Store MVP</h1>
         <p className="muted">
-          Frontend is ready. Catalog pages and admin UI will be implemented on top
-          of this skeleton.
+          Frontend is ready. Catalog pages and admin UI will be implemented on top of this skeleton.
         </p>
         <span className="pill">Next.js + TypeScript</span>
       </section>
@@ -21,12 +20,9 @@ export default function HomePage() {
         </article>
         <article>
           <h2>Media</h2>
-          <p className="muted">
-            Direct uploads to MinIO via pre-signed URLs from backend.
-          </p>
+          <p className="muted">Direct uploads to MinIO via pre-signed URLs from backend.</p>
         </article>
       </section>
     </main>
-  );
+  )
 }
-
