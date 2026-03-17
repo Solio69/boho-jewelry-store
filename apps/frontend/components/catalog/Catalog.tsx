@@ -17,10 +17,12 @@ const Catalog = () => {
     <section className="catalog">
       <ul className="catalog__list">
         {availableProducts.map((product) => {
-          const { id, titleRu, price, descriptionRu, materials, isInStock } = product
+          const { id, titleRu, price, descriptionRu, images, materials, isInStock } = product
+          const [firstImage] = images
 
           return (
             <li key={id} className="catalog__item">
+              {firstImage ? <img className="catalog__image" src={firstImage} alt={titleRu} /> : null}
               <p className="catalog__title">{titleRu}</p>
               <p className="catalog__price">
                 {CURRENCY_SYMBOL}
@@ -41,10 +43,12 @@ const Catalog = () => {
           <div className="catalog__divider" />
           <ul className="catalog__list">
             {unavailableProducts.map((product) => {
-              const { id, titleRu, descriptionRu, materials, isInStock } = product
+              const { id, titleRu, descriptionRu, images, materials, isInStock } = product
+              const [firstImage] = images
 
               return (
                 <li key={id} className="catalog__item">
+                  {firstImage ? <img className="catalog__image" src={firstImage} alt={titleRu} /> : null}
                   <p className="catalog__title">{titleRu}</p>
                   {descriptionRu ? <p className="catalog__description">{descriptionRu}</p> : null}
                   <p className="catalog__materials">{materials.join(MATERIALS_SEPARATOR)}</p>

@@ -12,6 +12,7 @@ tmp
 
 apps/backend/.env
 apps/frontend/.env.local
+apps/frontend/mocks
 
 apps/backend/prisma/migrations
 
