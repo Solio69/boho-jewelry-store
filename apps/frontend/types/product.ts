@@ -6,6 +6,7 @@ export type Product = {
   descriptionRu: string | null
   descriptionEn: string | null
   images: string[]
+  categories: string[]
   materials: string[]
   price: string
   isInStock: boolean

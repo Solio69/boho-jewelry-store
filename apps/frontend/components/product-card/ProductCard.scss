@@ -1,0 +1,44 @@
+$product-card-border-color: #d9d9d9;
+$product-card-text-secondary-color: #666666;
+$product-card-text-primary-color: #111111;
+$product-card-border: 1px solid $product-card-border-color;
+
+.product-card {
+  padding: 16px;
+  border: $product-card-border;
+  border-radius: 8px;
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-height: 320px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &__title,
+  &__categories,
+  &__price,
+  &__description,
+  &__materials,
+  &__status {
+    margin: 0;
+  }
+
+  &__categories {
+    color: $product-card-text-secondary-color;
+  }
+
+  > :not(:first-child) {
+    margin-top: 8px;
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 8px 12px;
+    color: $product-card-text-primary-color;
+    text-decoration: none;
+    border: $product-card-border;
+    border-radius: 6px;
+  }
+}

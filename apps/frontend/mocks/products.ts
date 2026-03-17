@@ -3,11 +3,13 @@ import firstProductPhoto from './photo_2026-03-17_20-46-13.jpg'
 import secondProductPhoto from './photo_2026-03-17_20-46-21.jpg'
 import thirdProductPhoto from './photo_2026-03-17_20-46-26.jpg'
 
-const PRODUCT_IMAGES = [
-  firstProductPhoto.src,
-  secondProductPhoto.src,
-  thirdProductPhoto.src,
-]
+const PRODUCT_IMAGES = [firstProductPhoto.src, secondProductPhoto.src, thirdProductPhoto.src]
+
+const NECKLACE_CATEGORY = 'колье'
+const CHOKER_CATEGORY = 'чоккеры'
+const BRACELET_CATEGORY = 'браслеты'
+const LOULAS_CATEGORY = 'лулы'
+const UNIQUE_ARTIFACTS_CATEGORY = 'уникальные артефакты'
 
 export const productsMock: Product[] = [
   {
@@ -18,6 +20,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Серебряное кольцо с минималистичным дизайном.',
     descriptionEn: 'Sterling silver ring with a minimalist design.',
     images: PRODUCT_IMAGES,
+    categories: [LOULAS_CATEGORY],
     materials: ['Sterling Silver'],
     price: '129.00',
     isInStock: true,
@@ -34,6 +37,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Тонкое золотое колье для повседневных образов.',
     descriptionEn: 'Delicate gold necklace for everyday looks.',
     images: PRODUCT_IMAGES,
+    categories: [NECKLACE_CATEGORY, UNIQUE_ARTIFACTS_CATEGORY],
     materials: ['14K Gold'],
     price: '249.00',
     isInStock: true,
@@ -50,6 +54,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Серьги с пресноводным жемчугом.',
     descriptionEn: null,
     images: PRODUCT_IMAGES,
+    categories: [UNIQUE_ARTIFACTS_CATEGORY],
     materials: ['Freshwater Pearl', 'Sterling Silver'],
     price: '179.00',
     isInStock: false,
@@ -66,6 +71,7 @@ export const productsMock: Product[] = [
     descriptionRu: null,
     descriptionEn: null,
     images: PRODUCT_IMAGES,
+    categories: [BRACELET_CATEGORY],
     materials: ['Stainless Steel'],
     price: '99.00',
     isInStock: true,
@@ -82,6 +88,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Тонкое кольцо с мягким блеском для повседневной носки.',
     descriptionEn: 'A delicate ring with a soft shine for everyday wear.',
     images: PRODUCT_IMAGES,
+    categories: [LOULAS_CATEGORY],
     materials: ['Sterling Silver'],
     price: '119.00',
     isInStock: true,
@@ -98,6 +105,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Изящное колье с теплым золотистым акцентом.',
     descriptionEn: 'An elegant necklace with a warm golden accent.',
     images: PRODUCT_IMAGES,
+    categories: [NECKLACE_CATEGORY],
     materials: ['14K Gold'],
     price: '269.00',
     isInStock: true,
@@ -114,6 +122,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Легкие серьги с чистой лаконичной формой.',
     descriptionEn: 'Lightweight earrings with a clean, minimal shape.',
     images: PRODUCT_IMAGES,
+    categories: [UNIQUE_ARTIFACTS_CATEGORY],
     materials: ['Sterling Silver'],
     price: '159.00',
     isInStock: true,
@@ -130,6 +139,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Минималистичный браслет с гладкой фактурой.',
     descriptionEn: 'A minimalist bracelet with a smooth finish.',
     images: PRODUCT_IMAGES,
+    categories: [BRACELET_CATEGORY],
     materials: ['Stainless Steel'],
     price: '109.00',
     isInStock: true,
@@ -146,6 +156,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Аккуратное кольцо для многослойных сочетаний.',
     descriptionEn: 'A neat ring designed for layered styling.',
     images: PRODUCT_IMAGES,
+    categories: [LOULAS_CATEGORY, UNIQUE_ARTIFACTS_CATEGORY],
     materials: ['Sterling Silver'],
     price: '139.00',
     isInStock: false,
@@ -162,6 +173,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Тонкая цепочка с деликатным центральным элементом.',
     descriptionEn: 'A fine chain with a delicate centerpiece.',
     images: PRODUCT_IMAGES,
+    categories: [NECKLACE_CATEGORY, CHOKER_CATEGORY],
     materials: ['14K Gold'],
     price: '289.00',
     isInStock: true,
@@ -178,6 +190,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Небольшие серьги с выразительным силуэтом.',
     descriptionEn: 'Compact earrings with a distinct silhouette.',
     images: PRODUCT_IMAGES,
+    categories: [UNIQUE_ARTIFACTS_CATEGORY],
     materials: ['Sterling Silver'],
     price: '149.00',
     isInStock: true,
@@ -194,6 +207,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Легкий браслет с современным графичным характером.',
     descriptionEn: 'A lightweight bracelet with a modern graphic feel.',
     images: PRODUCT_IMAGES,
+    categories: [BRACELET_CATEGORY],
     materials: ['Stainless Steel'],
     price: '114.00',
     isInStock: true,
@@ -210,6 +224,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Выразительное кольцо с мягко скругленной формой.',
     descriptionEn: 'A statement ring with a softly rounded form.',
     images: PRODUCT_IMAGES,
+    categories: [LOULAS_CATEGORY],
     materials: ['Sterling Silver'],
     price: '169.00',
     isInStock: true,
@@ -226,6 +241,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Нежное колье с плавной линией и спокойным блеском.',
     descriptionEn: 'A gentle necklace with a flowing line and subtle shine.',
     images: PRODUCT_IMAGES,
+    categories: [NECKLACE_CATEGORY, UNIQUE_ARTIFACTS_CATEGORY],
     materials: ['14K Gold'],
     price: '259.00',
     isInStock: false,
@@ -242,6 +258,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Женственные серьги с мягким природным настроением.',
     descriptionEn: 'Feminine earrings with a soft natural mood.',
     images: PRODUCT_IMAGES,
+    categories: [UNIQUE_ARTIFACTS_CATEGORY],
     materials: ['Freshwater Pearl', 'Sterling Silver'],
     price: '189.00',
     isInStock: true,
@@ -258,6 +275,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Сдержанный браслет для базовых повседневных образов.',
     descriptionEn: 'A restrained bracelet for everyday staple looks.',
     images: PRODUCT_IMAGES,
+    categories: [BRACELET_CATEGORY],
     materials: ['Stainless Steel'],
     price: '119.00',
     isInStock: true,
@@ -274,6 +292,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Кольцо с чистым силуэтом и спокойной геометрией.',
     descriptionEn: 'A ring with a clean silhouette and calm geometry.',
     images: PRODUCT_IMAGES,
+    categories: [LOULAS_CATEGORY],
     materials: ['Sterling Silver'],
     price: '129.00',
     isInStock: false,
@@ -290,6 +309,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Акцентное колье с утонченной подачей.',
     descriptionEn: 'A statement necklace with a refined presentation.',
     images: PRODUCT_IMAGES,
+    categories: [NECKLACE_CATEGORY, CHOKER_CATEGORY],
     materials: ['14K Gold'],
     price: '299.00',
     isInStock: true,
@@ -306,6 +326,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Минималистичные серьги для ежедневного гардероба.',
     descriptionEn: 'Minimal earrings for an everyday wardrobe.',
     images: PRODUCT_IMAGES,
+    categories: [UNIQUE_ARTIFACTS_CATEGORY],
     materials: ['Sterling Silver'],
     price: '139.00',
     isInStock: true,
@@ -322,6 +343,7 @@ export const productsMock: Product[] = [
     descriptionRu: 'Лаконичный браслет с мягким металлическим блеском.',
     descriptionEn: 'A concise bracelet with a soft metallic shine.',
     images: PRODUCT_IMAGES,
+    categories: [BRACELET_CATEGORY, UNIQUE_ARTIFACTS_CATEGORY],
     materials: ['Stainless Steel'],
     price: '105.00',
     isInStock: true,
