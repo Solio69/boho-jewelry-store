@@ -1,0 +1,51 @@
+$catalog-border-color: #d9d9d9;
+$catalog-border: 1px solid $catalog-border-color;
+
+.catalog {
+  padding: 24px;
+}
+
+.catalog__list {
+  display: grid;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.catalog__item {
+  padding: 16px;
+  border: $catalog-border;
+  border-radius: 8px;
+}
+
+.catalog__unavailable {
+  margin-top: 24px;
+}
+
+.catalog__divider {
+  height: 1px;
+  margin-bottom: 24px;
+  background-color: $catalog-border-color;
+}
+
+.catalog__title,
+.catalog__price,
+.catalog__description,
+.catalog__materials,
+.catalog__status {
+  margin: 0;
+}
+
+.catalog__item > :not(:first-child) {
+  margin-top: 8px;
+}
+
+.catalog__button {
+  display: inline-block;
+  padding: 8px 12px;
+  color: #111111;
+  text-decoration: none;
+  border: $catalog-border;
+  border-radius: 6px;
+}
