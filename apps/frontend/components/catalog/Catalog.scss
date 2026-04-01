@@ -16,6 +16,10 @@ $catalog-divider-color: #d9d9d9;
     margin-top: 24px;
   }
 
+  > :not(:first-child) {
+    margin-top: 24px;
+  }
+
   &__divider {
     height: 1px;
     margin-bottom: 24px;

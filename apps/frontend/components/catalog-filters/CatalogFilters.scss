@@ -1,0 +1,30 @@
+$catalog-filters-border-color: #d9d9d9;
+$catalog-filters-text-color: #111111;
+$catalog-filters-background-color: #ffffff;
+$catalog-filters-border: 1px solid $catalog-filters-border-color;
+
+.catalog-filters {
+  &__title {
+    margin: 0 0 12px;
+    color: $catalog-filters-text-color;
+    font-size: 16px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__button {
+    padding: 8px 12px;
+    color: $catalog-filters-text-color;
+    background-color: $catalog-filters-background-color;
+    border: $catalog-filters-border;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+}
